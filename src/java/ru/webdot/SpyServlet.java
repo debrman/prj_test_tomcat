@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "SpyServlet", urlPatterns = {"/SpyServlet"})
+
+//класс SpyServlet расширяет интерфейс HttpServlet
+
 public class SpyServlet extends HttpServlet {
 
     /**
@@ -21,7 +24,11 @@ public class SpyServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    /* сервлет включает метод processRequest,имеющий два аргумента: 
+     * объект request типа HttpServletrequest и объект response типа HttpServletResponse
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    //В случае сбоев возбуждаются исключения ServletException или IOException        
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
